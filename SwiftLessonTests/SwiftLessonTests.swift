@@ -9,6 +9,14 @@
 import UIKit
 import XCTest
 
+class FizzBuzzFactory {
+    
+    func convert (input: Array<Int>) -> Array<String>{
+        return input.map({"\($0)"})
+    }
+    
+}
+
 class SwiftLessonTests: XCTestCase {
     
     override func setUp() {
@@ -21,16 +29,14 @@ class SwiftLessonTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testFizzBuzz() {
+        let fizzbuzzFactory = FizzBuzzFactory()
+        
+        //これでいいらしい。いいの？？ -> http://qiita.com/shoma2da/items/efe1cb6e96d95959fcdd
+        let someArray = (Array<Int>)(1...3)
+        
+        let converted = fizzbuzzFactory.convert(someArray)
+        
+        XCTAssertEqual(converted, ["1","2","3"], "Pass")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
