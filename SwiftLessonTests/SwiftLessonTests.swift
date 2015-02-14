@@ -12,7 +12,7 @@ import XCTest
 class FizzBuzzFactory {
     
     func convert (input: Array<Int>) -> Array<String>{
-        return input.map({"\($0)"})
+        return input.map( {$0 % 15 == 0 ? "FizzBuzz" : $0 % 3 == 0 ? "Fizz" : $0 % 5 == 0 ? "Buzz" : "\($0)"})
     }
     
 }
@@ -32,11 +32,14 @@ class SwiftLessonTests: XCTestCase {
     func testFizzBuzz() {
         let fizzbuzzFactory = FizzBuzzFactory()
         
-        //これでいいらしい。いいの？？ -> http://qiita.com/shoma2da/items/efe1cb6e96d95959fcdd
-        let someArray = (Array<Int>)(1...3)
+        //RangeからArrayの変換はこれでいいらしい。いいの？？ -> http://qiita.com/shoma2da/items/efe1cb6e96d95959fcdd
+        let someArray = (Array<Int>)(1...20)
         
         let converted = fizzbuzzFactory.convert(someArray)
         
-        XCTAssertEqual(converted, ["1","2","3"], "Pass")
+        XCTAssertEqual(
+            converted,
+            ["1","2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz","13","14","FizzBuzz","16","17","Fizz","19","Buzz"],
+            "Pass")
     }
 }
