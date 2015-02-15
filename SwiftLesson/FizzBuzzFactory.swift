@@ -8,6 +8,20 @@
 
 import Foundation
 
+extension Int{
+    func fizzbuzz() -> String{
+        switch self{
+        case _ where self % 15 == 0:
+            return "FizzBuzz"
+        case _ where self % 3 == 0:
+            return "Fizz"
+        case _ where self % 5 == 0:
+            return "Buzz"
+        default:
+            return "\(self)"
+        }
+    }
+}
 
 public class FizzBuzzFactory {
     
@@ -21,15 +35,6 @@ public class FizzBuzzFactory {
     }
     
     private func convert(input: Int) -> String{
-        switch input{
-        case _ where input % 15 == 0:
-            return "FizzBuzz"
-        case _ where input % 3 == 0:
-            return "Fizz"
-        case _ where input % 5 == 0:
-            return "Buzz"
-        default:
-            return "\(input)"
-        }
+        return input.fizzbuzz()
     }
 }
