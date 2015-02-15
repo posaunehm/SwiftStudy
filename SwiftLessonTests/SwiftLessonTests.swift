@@ -8,14 +8,9 @@
 
 import UIKit
 import XCTest
+import SwiftLesson
 
-class FizzBuzzFactory {
-    
-    func convert (input: Array<Int>) -> Array<String>{
-        return input.map( {$0 % 15 == 0 ? "FizzBuzz" : $0 % 3 == 0 ? "Fizz" : $0 % 5 == 0 ? "Buzz" : "\($0)"})
-    }
-    
-}
+
 
 class SwiftLessonTests: XCTestCase {
     

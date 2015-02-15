@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E81D083A1A901B4900AFD081 /* FizzBuzzFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81D08391A901B4900AFD081 /* FizzBuzzFactory.swift */; };
 		E89900841A879F5E00599F33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89900831A879F5E00599F33 /* AppDelegate.swift */; };
 		E89900861A879F5E00599F33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89900851A879F5E00599F33 /* ViewController.swift */; };
 		E89900891A879F5E00599F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89900871A879F5E00599F33 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E81D08391A901B4900AFD081 /* FizzBuzzFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FizzBuzzFactory.swift; sourceTree = "<group>"; };
 		E899007E1A879F5E00599F33 /* SwiftLesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89900821A879F5E00599F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89900831A879F5E00599F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				E899008A1A879F5E00599F33 /* Images.xcassets */,
 				E899008C1A879F5E00599F33 /* LaunchScreen.xib */,
 				E89900811A879F5E00599F33 /* Supporting Files */,
+				E81D08391A901B4900AFD081 /* FizzBuzzFactory.swift */,
 			);
 			path = SwiftLesson;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81D083A1A901B4900AFD081 /* FizzBuzzFactory.swift in Sources */,
 				E89900861A879F5E00599F33 /* ViewController.swift in Sources */,
 				E89900841A879F5E00599F33 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				E899009F1A879F5E00599F33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E89900A01A879F5E00599F33 /* Build configuration list for PBXNativeTarget "SwiftLessonTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				E89900A21A879F5E00599F33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
