@@ -27,24 +27,17 @@ class ViewController: UIViewController, UITextFieldDelegate{
         
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-     
-        var tempStr = textField.text as NSString
-        tempStr = tempStr.stringByReplacingCharactersInRange(range, withString: string)
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
         
-        
-        if let intValue = (tempStr as String).toInt()
+        if let intValue = (textField.text as String).toInt()
         {
             fizzBuzzLabel.text = fizzBuzzFunction.convert(intValue)
         }else{
             fizzBuzzLabel.text = "???"
         }
         
-        return true
+        return false
     }
-    
-    
-
-
 }
 
