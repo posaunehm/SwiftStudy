@@ -21,6 +21,19 @@ public class BasicFizzBuzz : FizzbuzzFunction{
     }
 }
 
+public class DelegateFizzbuzz: FizzbuzzFunction{
+    
+    private let internalFunction: Int -> String
+    
+    public init(delegateFunction: Int -> String){
+        internalFunction = delegateFunction
+    }
+    
+    public func convert(input: Int) -> String{
+        return internalFunction(input)
+    }
+}
+
 extension Int{
     func fizzbuzz() -> String{
         switch self{

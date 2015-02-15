@@ -59,4 +59,17 @@ class SwiftLessonTests: XCTestCase {
             ["1","2","3", "4", "5"],
             "Pass")
     }
+    
+    func testDelegateFizzBuzzFunction() {
+        let fizzBuzzFunction = DelegateFizzbuzz(){"\($0)!"}
+        let fizzbuzzFactory = FizzBuzzFactory(inputFunction: fizzBuzzFunction)
+        
+        
+        let converted = fizzbuzzFactory.convert([1,2,3,4,5])
+        
+        XCTAssertEqual(
+            converted,
+            ["1!","2!","3!", "4!", "5!"],
+            "Pass")
+    }
 }
