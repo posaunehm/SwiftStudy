@@ -10,6 +10,12 @@ import UIKit
 import XCTest
 import SwiftLesson
 
+class NothingFizzbuzz : FizzbuzzFunction{
+    
+    func convert(input: Int) -> String{
+        return "\(input)"
+    }
+}
 
 
 class SwiftLessonTests: XCTestCase {
@@ -25,7 +31,8 @@ class SwiftLessonTests: XCTestCase {
     }
     
     func testFizzBuzz() {
-        let fizzbuzzFactory = FizzBuzzFactory()
+        let fizzBuzzFunction = BasicFizzBuzz()
+        let fizzbuzzFactory = FizzBuzzFactory(inputFunction: fizzBuzzFunction)
         
         //RangeからArrayの変換はこれでいいらしい。いいの？？ -> http://qiita.com/shoma2da/items/efe1cb6e96d95959fcdd
         let someArray = (Array<Int>)(1...20)
@@ -35,6 +42,21 @@ class SwiftLessonTests: XCTestCase {
         XCTAssertEqual(
             converted,
             ["1","2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz","13","14","FizzBuzz","16","17","Fizz","19","Buzz"],
+            "Pass")
+    }
+    
+    
+    
+    func testChangeFizzBuzzFunction() {
+        let fizzBuzzFunction = NothingFizzbuzz()
+        let fizzbuzzFactory = FizzBuzzFactory(inputFunction: fizzBuzzFunction)
+        
+        
+        let converted = fizzbuzzFactory.convert([1,2,3,4,5])
+        
+        XCTAssertEqual(
+            converted,
+            ["1","2","3", "4", "5"],
             "Pass")
     }
 }

@@ -8,6 +8,19 @@
 
 import Foundation
 
+public protocol FizzbuzzFunction {
+    func convert(input: Int) -> String
+}
+
+public class BasicFizzBuzz : FizzbuzzFunction{
+    
+    public init(){    }
+    
+    public func convert(input: Int) -> String{
+        return input.fizzbuzz()
+    }
+}
+
 extension Int{
     func fizzbuzz() -> String{
         switch self{
@@ -25,9 +38,11 @@ extension Int{
 
 public class FizzBuzzFactory {
     
-    public init()
+    private let fizzBuzzFunction: FizzbuzzFunction
+
+    public init(inputFunction: FizzbuzzFunction)
     {
-        //特に何もしない
+        fizzBuzzFunction = inputFunction
     }
     
     public func convert (input: Array<Int>) -> Array<String>{
@@ -35,6 +50,6 @@ public class FizzBuzzFactory {
     }
     
     private func convert(input: Int) -> String{
-        return input.fizzbuzz()
+        return fizzBuzzFunction.convert(input)
     }
 }
