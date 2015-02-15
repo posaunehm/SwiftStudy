@@ -17,6 +17,19 @@ public class FizzBuzzFactory {
     }
     
     public func convert (input: Array<Int>) -> Array<String>{
-        return input.map( {$0 % 15 == 0 ? "FizzBuzz" : $0 % 3 == 0 ? "Fizz" : $0 % 5 == 0 ? "Buzz" : "\($0)"})
+        return input.map( {self.convert($0)})
+    }
+    
+    private func convert(input: Int) -> String{
+        switch input{
+        case _ where input % 15 == 0:
+            return "FizzBuzz"
+        case _ where input % 3 == 0:
+            return "Fizz"
+        case _ where input % 5 == 0:
+            return "Buzz"
+        default:
+            return "\(input)"
+        }
     }
 }
