@@ -12,8 +12,8 @@ import SwiftLesson
 
 class NothingFizzbuzz : FizzbuzzFunction{
     
-    func convert(input: Int) -> String{
-        return "\(input)"
+    func convert(input: Int?) -> String{
+        return "\(input!)"
     }
 }
 

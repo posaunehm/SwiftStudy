@@ -69,6 +69,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }else{
             fizzBuzzLabel.text = "???"
         }
+        
+        fizzBuzzLabel.text = fizzBuzzCore.convert(input.toInt()!) ?? "???"
     }
 }
 

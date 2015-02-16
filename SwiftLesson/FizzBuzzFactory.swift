@@ -9,15 +9,15 @@
 import Foundation
 
 public protocol FizzbuzzFunction {
-    func convert(input: Int) -> String
+    func convert(input: Int?) -> String
 }
 
 public class BasicFizzBuzz : FizzbuzzFunction{
     
     public init(){    }
     
-    public func convert(input: Int) -> String{
-        return input.fizzbuzz()
+    public func convert(input: Int?) -> String{
+        return input?.fizzbuzz() ?? "???"
     }
 }
 
@@ -29,8 +29,8 @@ public class DelegateFizzbuzz: FizzbuzzFunction{
         internalFunction = delegateFunction
     }
     
-    public func convert(input: Int) -> String{
-        return internalFunction(input)
+    public func convert(input: Int?) -> String{
+        return input == nil ? "???" : internalFunction(input!)
     }
 }
 
