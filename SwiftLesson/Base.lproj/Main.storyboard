@@ -34,11 +34,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O86-zV-zk3">
+                                <rect key="frame" x="34" y="143" width="97" height="29"/>
+                                <segments>
+                                    <segment title="Basic"/>
+                                    <segment title="Silly"/>
+                                </segments>
+                                <connections>
+                                    <action selector="FizzBuzzSelectorChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="En9-Ee-zqm"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="A4w-4c-qVX" firstAttribute="top" secondItem="4ot-bS-Sj8" secondAttribute="bottom" constant="42" id="Gwc-hC-0Ux"/>
                             <constraint firstItem="4ot-bS-Sj8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bu2-SJ-a1N"/>
+                            <constraint firstItem="O86-zV-zk3" firstAttribute="leading" secondItem="A4w-4c-qVX" secondAttribute="leading" id="ddD-Id-GtN"/>
+                            <constraint firstItem="O86-zV-zk3" firstAttribute="top" secondItem="A4w-4c-qVX" secondAttribute="bottom" constant="22" id="qST-QW-aAV"/>
                             <constraint firstItem="A4w-4c-qVX" firstAttribute="leading" secondItem="4ot-bS-Sj8" secondAttribute="leading" id="qVM-YC-UvP"/>
                             <constraint firstItem="4ot-bS-Sj8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="sfu-dt-ZiR"/>
                         </constraints>

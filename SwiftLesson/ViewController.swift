@@ -10,10 +10,37 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate{
 
+    required init(coder aDecoder: NSCoder) {
+        fizzBuzzCore = BasicFizzBuzz()
+        
+        super.init(coder: aDecoder)
+    }
+
     @IBOutlet weak var fizzbuzzTextField: UITextField!
     @IBOutlet weak var fizzBuzzLabel: UILabel!
     
-    let fizzBuzzFunction = BasicFizzBuzz()
+    
+    @IBAction func FizzBuzzSelectorChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+        case 0:
+            self.fizzBuzzCore = BasicFizzBuzz()
+        case 1:
+            self.fizzBuzzCore = DelegateFizzbuzz(){"\($0)!!"}
+        default:
+            self.fizzBuzzCore = DelegateFizzbuzz({(_: Int) -> String in
+                return "???"
+            })
+        }
+    }
+    
+    var fizzBuzzCore : FizzbuzzFunction{
+        willSet{
+            
+        }
+        didSet{
+            setFizzbuzzLabel(fizzbuzzTextField.text)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +57,18 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         
-        if let intValue = (textField.text as String).toInt()
+        setFizzbuzzLabel(textField.text)
+        
+        return false
+    }
+    
+    private func setFizzbuzzLabel(input: String){
+        if let intValue = input.toInt()
         {
-            fizzBuzzLabel.text = fizzBuzzFunction.convert(intValue)
+            fizzBuzzLabel.text = fizzBuzzCore.convert(intValue)
         }else{
             fizzBuzzLabel.text = "???"
         }
-        
-        return false
     }
 }
 
