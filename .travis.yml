@@ -1,0 +1,5 @@
+language: objective-c
+
+script:
+  - xctool -workspace SwiftLesson.xcworkspace -scheme SwiftLesson -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace SwiftLesson.xcworkspace -scheme SwiftLesson -destination 'platform=iOS Simulator,name=iPhone 6' test
