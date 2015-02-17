@@ -1,5 +1,5 @@
 language: objective-c
 
 script:
-  - xctool -project SwiftLesson.xcproject -scheme SwiftLesson
+  - xctool -project SwiftLesson.xcodeproj -scheme SwiftLesson
 
