@@ -2,6 +2,7 @@ machine:
   environment:
     XCODE_SCHEME: SwiftLesson
 test:
-  override
-    - xctool -project SwiftLesson.xcodeproj -scheme SwiftLesson -sdk iphonesimulator clean test
+  override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/xctest
+    - Xctool -project SwiftLesson.xcodeproj -scheme SwiftLesson -sdk iphonesimulator -reporter junit:$CIRCLE_TEST_REPORTS/xctest/test-result.xml clean test
     
