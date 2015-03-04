@@ -14,6 +14,8 @@
 		E899008B1A879F5E00599F33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E899008A1A879F5E00599F33 /* Images.xcassets */; };
 		E899008E1A879F5E00599F33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E899008C1A879F5E00599F33 /* LaunchScreen.xib */; };
 		E899009A1A879F5E00599F33 /* SwiftLessonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89900991A879F5E00599F33 /* SwiftLessonTests.swift */; };
+		E8CA9C801AA6169900E4614B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CA9C7E1AA6169900E4614B /* Crashlytics.framework */; };
+		E8CA9C811AA6169900E4614B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8CA9C7F1AA6169900E4614B /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		E89900931A879F5E00599F33 /* SwiftLessonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLessonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89900981A879F5E00599F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89900991A879F5E00599F33 /* SwiftLessonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLessonTests.swift; sourceTree = "<group>"; };
+		E8CA9C7E1AA6169900E4614B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		E8CA9C7F1AA6169900E4614B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8CA9C801AA6169900E4614B /* Crashlytics.framework in Frameworks */,
+				E8CA9C811AA6169900E4614B /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +70,8 @@
 				E89900801A879F5E00599F33 /* SwiftLesson */,
 				E89900961A879F5E00599F33 /* SwiftLessonTests */,
 				E899007F1A879F5E00599F33 /* Products */,
+				E8CA9C7E1AA6169900E4614B /* Crashlytics.framework */,
+				E8CA9C7F1AA6169900E4614B /* Fabric.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +133,7 @@
 				E899007A1A879F5E00599F33 /* Sources */,
 				E899007B1A879F5E00599F33 /* Frameworks */,
 				E899007C1A879F5E00599F33 /* Resources */,
+				E8CA9C791AA6142B00E4614B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -209,6 +218,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E8CA9C791AA6142B00E4614B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run f8ed2f63e29b81149e3e1733aa8b59d81037a623 7a2983e5c461119e4d57cb60334ca90315687009ab2dedc76289e80016dbf985";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E899007A1A879F5E00599F33 /* Sources */ = {
@@ -342,6 +367,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SwiftLesson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +381,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SwiftLesson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,6 +398,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -384,6 +418,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SwiftLessonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
