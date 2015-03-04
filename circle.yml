@@ -3,5 +3,5 @@ machine:
     XCODE_SCHEME: SwiftLesson
 test:
   override:
-    - xctool -project SwiftLesson.xcodeproj -scheme SwiftLesson -sdk iphonesimulator clean test
+    - xctool -project SwiftLesson.xcodeproj -scheme SwiftLesson -sdk iphonesimulator -report junit:./test-result.xml clean test
     
