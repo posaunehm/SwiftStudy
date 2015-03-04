@@ -2,6 +2,6 @@ machine:
   environment:
     XCODE_SCHEME: SwiftLesson
 test:
-  override
+  override:
     - xctool -project SwiftLesson.xcodeproj -scheme SwiftLesson -sdk iphonesimulator clean test
     
